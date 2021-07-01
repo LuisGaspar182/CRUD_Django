@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for dbs in db%}
+            <tr>
+                <th>{{dbs.id}}</th>
+                <td>{{dbs.nome}}</td>
+                <td>{{dbs.telefone}}</td>
+                <td>
+                    <a href="/edit/{{dbs.id}}">editar</a>
+                    <a href="/delete/{{dbs.id}}">excluir</a>
+                </td>
+            </tr>        
+        {% endfor%}
+
+        </tbody>
+    </table>
+    <a href="/">voltar</a>
+</body>
+</html>
